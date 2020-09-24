@@ -9,6 +9,7 @@ const port = 3000;
 const txts = [];
 //let key = 0;
 app.get("/txt", (req, res) => {
+  console.log(txts)
   let nomes = []
   for (let i = 0; i < txts.lenght; i++) {
     nomes.push(txts[i]);
@@ -38,6 +39,7 @@ app.post('/enviar', (req,res) => {
   //const user = {key,txt}
   txts.push(arquivo);
   console.log(arquivo)
+  console.log(txts)
   res.status(201).json(arquivo); 
 });
 

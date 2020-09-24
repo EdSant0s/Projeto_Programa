@@ -11,7 +11,7 @@ const txts = [];
 app.get("/txt", (req, res) => {
   console.log(txts)
   let nomes = []
-  for (let i = 0; i < txts.lenght; i++) {
+  for (let i = 0; i < txts.length; i++) {
     nomes.push(txts[i]);
     console.log(`i: ${i}`);
     console.log(nomes);
@@ -23,7 +23,7 @@ app.get("/txt", (req, res) => {
 app.get("/atualizar/:nome", (req, res) => {
   const nome = req.params.nome;
 
-  for (let i = 0; i < txts.lenght; i++){
+  for (let i = 0; i < txts.length; i++){
     arquivo = txts[i];
     if (arquivo.nome == nome){
       res.json(arquivo);

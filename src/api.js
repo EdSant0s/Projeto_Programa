@@ -11,7 +11,7 @@ const txts = [];
 app.get("/txt", (req, res) => {
   let nomes = []
   for (let i = 0; i < txts.lenght; i++) {
-    nomes.append = txts[i];
+    nomes.push(txts[i]);
   }
   res.json(nomes);
 })

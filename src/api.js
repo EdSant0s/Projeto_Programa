@@ -37,7 +37,6 @@ app.post('/enviar', (req,res) => {
   //const user = {key,txt}
   txts.push(arquivo);
   console.log(arquivo)
-  console.log(req)
   res.status(201).json(arquivo); 
 });
 

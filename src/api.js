@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require("body-parser")
 
 const app = express();
 app.use(cors());
@@ -8,28 +9,13 @@ app.use(express.json());
 const port = 3000;
 const txts = [];
 //let key = 0;
-app.get ("/txt", (req, res) => {
+app.get("/txt", (req, res) => {
   let nomes = []
   for (let i = 0; i < txts.lenght; i++) {
     nomes.append = txts[i];
   }
   res.json(nomes);
 })
-
-/*
-[
-  {
-    nome:"ae",
-    txt:"opa"
-  },
-
-  {
-    nome:"ae2"
-    txt:"eae men"
-  }
-]
-*/
-
 
 // Envia conteúdo do arquivo requisitado
 app.get("/atualizar/:nome", (req, res) => {
@@ -54,6 +40,14 @@ app.post('/enviar', (req,res) => {
   
   res.status(201).json(arquivo); 
 });
+
+app.put("/atualizar/:nome", (req, res) => {
+  const nome = req.params.nome;
+  const {txt} = req.body;
+  
+  
+}) 
+
 
 app.listen(port, () => {
   console.log(`app is running is port ${port}`)

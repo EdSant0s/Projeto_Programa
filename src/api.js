@@ -1,10 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require("body-parser")
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 const port = 3000;
 const txts = [];
@@ -37,7 +36,8 @@ app.post('/enviar', (req,res) => {
   //key ++;
   //const user = {key,txt}
   txts.push(arquivo);
-  
+  console.log(arquivo)
+  console.log(req)
   res.status(201).json(arquivo); 
 });
 

@@ -13,6 +13,7 @@ app.get("/txt", (req, res) => {
   let nomes = []
   for (let i = 0; i < txts.lenght; i++) {
     nomes.push(txts[i]);
+    console.log(`i: ${i}`);
     console.log(nomes);
   }
   return res.json(nomes);

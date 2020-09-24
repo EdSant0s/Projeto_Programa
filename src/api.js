@@ -14,7 +14,7 @@ app.get("/txt", (req, res) => {
     nomes.push(txts[i]);
     console.log(nomes);
   }
-  res.json(nomes);
+  return res.json(nomes);
 })
 
 // Envia conteúdo do arquivo requisitado
@@ -28,7 +28,7 @@ app.get("/atualizar/:nome", (req, res) => {
     } 
   }
 
-  res.status(404).json({});
+  return res.status(404).json({});
 });
 
 // Recebe txt novo a ser adicionado

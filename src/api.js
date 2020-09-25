@@ -23,7 +23,7 @@ app.get("/atualizar/:nome", (req, res) => {
   for (let i = 0; i < txts.length; i++){
     arquivo = txts[i];
     if (arquivo.nome == nome){
-      res.json(arquivo);
+      return res.json(arquivo);
     } 
   }
 

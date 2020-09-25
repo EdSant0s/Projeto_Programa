@@ -28,7 +28,7 @@ class txt_Service {
         return fetch(this.url, {
             method: "GET"
 
-        }).then(resposta => resposta.json)
+        }).then(resposta => resposta.json())
     }
     atualizar(txt) {
         return fetch(this.url, {
@@ -76,23 +76,24 @@ document.getElementById("historico").onclick = function () {
         $("#menu_opcao").show("fast")
     }
     const ul_txt = document.getElementById("txt_historico");
-    const texto_service = new txt_Service("http://localhost:3000/atualizar/txt");
+    const texto_service = new txt_Service("http://localhost:3000/txt");
     texto_service.listar().then(resposta => {
-        for (let i = 0; i <= resposta.length - 1; i++) {
+        for (let i = 0; i <= resposta.length-1; i++) {
             const li = document.createElement("li");
             const button = document.createElement("button");
-            button.innerText = resposta[i].nome;
+            button.innerText = resposta[i];
             li.append(button);
             ul_txt.append(li);
             button.onclick = function () {
                 $("#escolha_txt").hide("fast");
                 $("#look_txt").show("fast");
-                const nome_txt = button.textContent();
+                const nome_txt = button.textContent;
                 const text_service = new txt_Service(`http://localhost:3000/atualizar/${nome_txt}`)
                 text_service.listar().then(resposta => {
                     const txt = resposta.txt;
-                    const txt_put = document.getElementById("txt_put").value = txt;
+                    let txt_put = document.getElementById("txt_put").value = txt;
                     document.getElementById("put_txt").onclick = function () {
+                        txt_put = document.getElementById("txt_put").value
                         const jhon_sleep = new TXT_put(txt_put);
                         const text_service = new txt_Service(`http://localhost:3000/atualizar/${nome_txt}`)
                         text_service.atualizar(jhon_sleep).then(response => {

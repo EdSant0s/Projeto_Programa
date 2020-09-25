@@ -41,9 +41,13 @@ app.post('/enviar', (req,res) => {
 
 app.put("/atualizar/:nome", (req, res) => {
   const nome = req.params.nome;
-  const {txt} = req.body;
-  
-  
+  const {txt} = req.body; 
+  for (let i = 0; i < txts.length; i++) {
+    if (txts[i].nome == nome){
+      txts[i].txt = txt;
+      return res.json(txts[i]);
+    }
+  }
 }) 
 
 

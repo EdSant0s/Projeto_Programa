@@ -52,7 +52,7 @@ document.getElementById("criar_txt").onclick = function () {
             swal('digite o nome ou o seu txt', '- tente novamente -', 'error')
 
         } else {
-            const texto = new TXT(txt_user, txt_nome);
+            const texto = new TXT(txt_nome, txt_user);
             const texto_service = new txt_Service("http://localhost:3000/enviar");
             texto_service.inserir(texto).then(resposta => {
                 $("#txt").val(' ');

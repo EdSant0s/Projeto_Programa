@@ -6,6 +6,7 @@ app.use(cors());
 app.use(express.json());
 
 const port = 3000;
+
 const txts = [];
 //let key = 0;
 app.get("/txt", (req, res) => {
@@ -14,6 +15,7 @@ app.get("/txt", (req, res) => {
     nomes.push(txts[i].nome);
   }
   return res.json(nomes);
+
 })
 
 // Envia conteúdo do arquivo requisitado

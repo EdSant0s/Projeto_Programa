@@ -6,11 +6,11 @@ app.use(express.json());
 const port = 3000;
 const txt_user = [];
 let key = 0;
-
 app.post('/enviar',(req,res) =>{
     const {txt} = req.body;
     key ++;
-    const user = {key,txt}
+    const id = key
+    const user = {id,txt}
     txt_user.push(user);
     res.status(201).json(user); 
 })

@@ -4,10 +4,31 @@
         <link rel = "stylesheet" type = "text/css" href = "./index.css">
     </head>
     <body>
-        <h3> Digite seu txt e guarde no nosso servidor e siga nos caminhos do txt </h1>
-            <textarea id = "txt" phaceloader="escreva seu txt"></textarea>
-            <button id = "enviar_txt"> Enviar </button>
+        <div id="menu_opcao">
+            <button id="historico"> Veja seu historico de Txt </button>
+            <button id="criar_txt"> Criar txt </button>
+        </div>
+        <div id="area_criar_txt">
+                <input id="nome_txt" placeholder="diga o nome do txt"></br>
+                <textarea id = "txt" phaceloader="escreva seu txt"></textarea>
+                <button id = "enviar_txt"> Enviar </button>
+        </div>
+        <div id="area_historico">
+            <div id="escolha_txt">
+            <ul id="txt_historico">
+            </ul>
+            <button id = "voltar_historico"> voltar </button>
+         </div>
+            <div id="look_txt">
+                <textarea id="txt_put"> 
 
+                </textarea>
+                <button id="put_txt"> Atualizar </button> <button id="cancelar_put"> Cancelar</button>
+            </div>
+        </div>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src = "pegar_txt.js"></script>
     </body>
 </html>
